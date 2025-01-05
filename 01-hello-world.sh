@@ -2,4 +2,5 @@
 
 # this line is commented
 echo "hello world!"
-echo "hi, word!"
+echo "hi, world!"
+echo "Hello!"
