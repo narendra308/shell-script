@@ -1,0 +1,6 @@
+#!/bin/bash
+
+PERSON1=$1
+PERSON2=$2
+
+SUM=($NUMBER1+$NUMBER2)
