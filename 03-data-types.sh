@@ -1,8 +1,10 @@
 #!/bin/bash
 
-PERSON1=$1
-PERSON2=$2
+NUMBER11=$1
+NUMBER22=$2
+
 TIMESTAMP=$(date)
+
 echo "script executed at:$TIMESTAMP"
 
 SUM=$(($NUMBER1+$NUMBER2))
