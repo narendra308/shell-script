@@ -9,7 +9,7 @@ then
 fi
 
 dnf list installed mysql
-if [ $? -ne ]
+if [ $? -ne 0 ]
 then
     dnf install mysql -y
 
@@ -38,3 +38,4 @@ then
     fi
 else
     echo "Git is already .... INSTALLED"
+fi
