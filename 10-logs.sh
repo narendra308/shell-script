@@ -6,7 +6,10 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-
+LOGS_FOLDER="var/log/shellscript-logs"
+LOG_FILE=$(echo $0 | cut -d "." -f1)
+TIMESTAMP=$(date +%y-%m-%d-%H-%M-%S)
+LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 VALIDATE() {
  if [ $1 -ne 0 ]
     then
@@ -17,6 +20,7 @@ VALIDATE() {
     fi
 }
 
+echo "script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 if [ $USERID -ne 0 ]
 then
@@ -24,20 +28,20 @@ then
     exit 1
 fi
 
-dnf list installed mysql 
+dnf list installed mysql &>>$LOG_FILE_NAME
 if [ $? -ne 0 ]
 then
-    dnf install mysql -y 
+    dnf install mysql -y &>>$LOG_FILE_NAME
     VALIDATE $? "Installing MYSQL"
    
 else
     echo -e "MYSQL is already .... $Y INSTALLED $N"
 fi
 
-dnf list installed Git
+dnf list installed Git &>>$LOG_FILE_NAME
 if [ $? -ne 0 ]
 then
-    dnf install git -y
+    dnf install git -y &>>$LOG_FILE_NAME
     VALIDATE $? "Installing Git"
     
 else
