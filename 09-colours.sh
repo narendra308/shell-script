@@ -2,9 +2,9 @@
 
 USERID=$(id -u)
 
-R="/e[31"
-G="/e[32"
-Y="/e[33"
+R="\e[31"
+G="\e[32"
+Y="\e[33"
 VALIDATE() {
  if [ $1 -ne 0 ]
     then
