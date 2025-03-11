@@ -37,5 +37,16 @@ if [ $# -lt 2 ]
         USAGE
 fi
 
+if [ ! -d $SOURCE_DIR ]
+    then
+        echo -e "$SOURCE_DIR Does not exits ..... please check"
+        exit 1
+fi
 
-echo "script started and executing at: $TIMESTAMP" 
+if [ ! -d $DEST_DIR ]
+    then
+        echo -e "$DEST_DIR Does not exits ...... please check"
+        exit 1
+fi
+
+echo "script started and executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
