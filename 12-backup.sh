@@ -38,4 +38,4 @@ if [ $# -lt 2 ]
 fi
 
 
-echo "script started and executing at: $TIMESTAMP" &>>$LOGS_FOLDER
+echo "script started and executing at: $TIMESTAMP" 
