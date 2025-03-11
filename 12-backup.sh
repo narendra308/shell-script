@@ -37,4 +37,5 @@ if [ $# -lt 2 ]
         USAGE
 fi
 
+
 echo "script started and executing at: $TIMESTAMP" &>>$LOGS_FOLDER
