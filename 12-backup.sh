@@ -51,10 +51,10 @@ fi
 
 echo "script started and executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
-FILES=$(find $SOURCE_DIR "*.log" -mtime +$DAYS)
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 echo " Files are: $FILES"
 
-if [ -n "$FILES" ]
+if [ -n "$FILES" ] # true if there are files to zip
 then
     echo "Files are: $FILES"
 else
