@@ -50,3 +50,6 @@ if [ ! -d $DEST_DIR ]
 fi
 
 echo "script started and executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+
+FILES=$(find $SOURCE_DIR "*.log" -mtime +$DAYS)
+echo " Files are: $FILES"
